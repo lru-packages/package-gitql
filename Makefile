@@ -35,7 +35,7 @@ info:
 
 .PHONY: clean
 clean:
-	rm -Rf /tmp/installdir* gitql*
+	rm -Rf /tmp/installdir* gitql* /tmp/gocode*
 
 #-------------------------------------------------------------------------------
 
