@@ -50,9 +50,9 @@ install-deps:
 
 .PHONY: compile
 compile:
-	export GOPATH=/tmp/gocode && mkdir -p $GOPATH;
+	export GOPATH=/tmp/gocode && mkdir -p $$GOPATH;
 	go get -u -d github.com/cloudson/gitql;
-	cd $GOPATH/src/github.com/cloudson/gitql && \
+	cd $$GOPATH/src/github.com/cloudson/gitql && \
 		git checkout $(VERSION) && \
 		make \
 	;
@@ -62,7 +62,7 @@ compile:
 .PHONY: install-tmp
 install-tmp:
 	mkdir -p /tmp/installdir-$(NAME)-$(VERSION);
-	cd $GOPATH/src/github.com/cloudson/gitql && \
+	cd $$GOPATH/src/github.com/cloudson/gitql && \
 		cp ./libgit2/install/lib/lib*  /tmp/installdir-$(NAME)-$(VERSION)/usr/local/lib/ && \
 		cp ./gitql /tmp/installdir-$(NAME)-$(VERSION)/usr/local/bin/git-ql;
 
